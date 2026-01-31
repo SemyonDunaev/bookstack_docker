@@ -28,6 +28,7 @@ services:
       - DB_PASSWORD=${DB_PASS}
       - DB_DATABASE=${DB_DATABASE}
       - STORAGE_TYPE=${STORAGE_TYPE}
+      - FILE_UPLOAD_SIZE_LIMIT=${FILE_UPLOAD_SIZE_LIMIT}
     volumes:
       - ./bookstack-config:/config
     ports:

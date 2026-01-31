@@ -55,6 +55,7 @@ BookStack seemed like a very convenient tool for keeping notes/knowledge base fo
 
     # Storage
     STORAGE_TYPE=local
+    FILE_UPLOAD_SIZE_LIMIT=500 # Mb
     ```
 
 3.  **Start**:
@@ -127,6 +128,7 @@ Bookstack показался мне очень удобным инструмен
 
     # Storage
     STORAGE_TYPE=local
+    FILE_UPLOAD_SIZE_LIMIT=500 # Mb
     ```
 
 3.  **Запуск**:
