@@ -1,0 +1,69 @@
+services:
+  bookstack_db:
+    image: lscr.io/linuxserver/mariadb:latest
+    container_name: bookstack_db
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASS}
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD=${DB_PASS}
+    volumes:
+      - ./bookstack-db-data:/config
+    restart: unless-stopped
+    networks:
+      - bookstack-net
+
+  bookstack:
+    image: lscr.io/linuxserver/bookstack:latest
+    container_name: bookstack_app
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - APP_URL=https://${NOIP_DOMAINS}
+      - APP_KEY=${APP_KEY}
+      - DB_HOST=bookstack_db
+      - DB_USERNAME=${DB_USER}
+      - DB_PASSWORD=${DB_PASS}
+      - DB_DATABASE=${DB_DATABASE}
+    volumes:
+      - ./bookstack-config:/config
+    ports:
+      - 6875:80
+    restart: unless-stopped
+    depends_on:
+      - bookstack_db
+    networks:
+      - bookstack-net
+
+  caddy:
+    image: caddy:2-alpine
+    container_name: bookstack_caddy
+    environment:
+      - SITE_ADDRESS=${NOIP_DOMAINS}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./caddy-data:/data
+      - ./caddy-config:/config
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: unless-stopped
+    networks:
+      - bookstack-net
+
+  noip:
+    image: ghcr.io/noipcom/noip-duc:latest
+    container_name: bookstack_noip
+    environment:
+      NOIP_USERNAME: ${NOIP_USERNAME}
+      NOIP_PASSWORD: ${NOIP_PASSWORD}
+      NOIP_HOSTNAMES: ${NOIP_DOMAINS}
+      INTERVAL: 30
+    restart: unless-stopped
+    networks:
+      - bookstack-net
+
+networks:
+  bookstack-net:
