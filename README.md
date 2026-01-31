@@ -39,16 +39,22 @@ BookStack seemed like a very convenient tool for keeping notes/knowledge base fo
     Ensure `.env` contains the correct data:
 
     ```env
-    APP_KEY=APP_KEY including base64 prefix
+    # BookStack Application Key
+    APP_KEY=APP_KEY including prefix base64
 
-    NOIP_USERNAME=your_email@example.com
-    NOIP_PASSWORD=your_noip_password
-    NOIP_DOMAINS=yourhost.ddns.net
+    # No-IP Credentials
+    NOIP_USERNAME=
+    NOIP_PASSWORD=
+    NOIP_DOMAINS=
 
-    DB_ROOT_PASS=supersecretrootpassword
+    # BookStack Database Credentials
+    DB_ROOT_PASS=
     DB_USER=bookstack
-    DB_PASS=bookstackpassword
+    DB_PASS=
     DB_DATABASE=bookstackapp
+
+    # Storage
+    STORAGE_TYPE=local
     ```
 
 3.  **Start**:
@@ -105,16 +111,22 @@ Bookstack показался мне очень удобным инструмен
     Проверьте, что в файле `.env` указаны верные данные:
 
     ```env
-    APP_KEY=APP_KEY включая префикс base64
+    # BookStack Application Key
+    APP_KEY=APP_KEY including prefix base64
 
-    NOIP_USERNAME=ваш_email@example.com
-    NOIP_PASSWORD=ваш_пароль_noip
-    NOIP_DOMAINS=ваш_домен ddns.net
+    # No-IP Credentials
+    NOIP_USERNAME=
+    NOIP_PASSWORD=
+    NOIP_DOMAINS=
 
-    DB_ROOT_PASS=сложный_пароль_root
+    # BookStack Database Credentials
+    DB_ROOT_PASS=
     DB_USER=bookstack
-    DB_PASS=пароль_пользователя_бд
+    DB_PASS=
     DB_DATABASE=bookstackapp
+
+    # Storage
+    STORAGE_TYPE=local
     ```
 
 3.  **Запуск**:
