@@ -19,7 +19,10 @@ BookStack seemed like a very convenient tool for keeping notes/knowledge base fo
 
 ### Setup and Running
 
-1. git clone https://github.com/SemyonDunaev/bookstack_docker.git
+1.  Clone repo:
+    ```bash
+    git clone https://github.com/SemyonDunaev/bookstack_docker.git
+    ```
 
 2.  **Configure `.env`**:
 
@@ -82,7 +85,10 @@ Bookstack показался мне очень удобным инструмен
 
 ### Настройка и запуск
 
-1. git clone https://github.com/SemyonDunaev/bookstack_docker.git
+1.  Склонировать репозиторий:  
+    ```bash
+    git clone https://github.com/SemyonDunaev/bookstack_docker.git
+    ```
 
 2.  **Настройте `.env`**:
 
