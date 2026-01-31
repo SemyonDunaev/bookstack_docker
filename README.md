@@ -1,4 +1,4 @@
-# BookStack Home Server Deployment / Развертывание BookStack на Домашнем Сервере
+# BookStack Home Server Deployment / BookStack на Домашнем Сервере
 
 [English](#english) | [Русский](#russian)
 
@@ -22,6 +22,7 @@ BookStack seemed like a very convenient tool for keeping notes/knowledge base fo
 1. git clone https://github.com/SemyonDunaev/bookstack_docker.git
 
 2.  **Configure `.env`**:
+
     Generate APP_KEY:
     ```bash
     docker run -it --rm --entrypoint /bin/bash lscr.io/linuxserver/bookstack:latest appkey
@@ -84,6 +85,7 @@ Bookstack показался мне очень удобным инструмен
 1. git clone https://github.com/SemyonDunaev/bookstack_docker.git
 
 2.  **Настройте `.env`**:
+
     Сгенерируйте APP_KEY:
     ```bash
     docker run -it --rm --entrypoint /bin/bash lscr.io/linuxserver/bookstack:latest appkey
